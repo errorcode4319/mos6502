@@ -1,8 +1,10 @@
 #include "cpu.hpp"
 
-namespace cpu {
+namespace core {
 
 CPU::CPU() {
+
+
 
 }
 

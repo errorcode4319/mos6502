@@ -3,6 +3,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=cmake,ninja
 
 build/
+.cache/
 
 ### CMake ###
 CMakeLists.txt.user

@@ -1,9 +1,9 @@
 #include<iostream>
 
-#include "cpu/cpu.hpp"
+#include "core/core.hpp"
 
 int main() {
     std::cout << "MOS 6502 Emulator" << std::endl;
 
-    cpu::CPU processor;
+    core::CPU processor;
 }
