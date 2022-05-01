@@ -2,14 +2,20 @@
 
 namespace core {
 
-CPU::CPU() {
-
-
+Processor::Processor() {
 
 }
 
-CPU::~CPU() {
+Processor::~Processor() {
 
 }
+
+void Processor::initInstSet() {
+    
+    
+
+}
+
+
 
 }

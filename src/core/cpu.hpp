@@ -3,30 +3,37 @@
 
 #include <iostream>
 #include <array> 
+#include <vector>
 #include <cstdint>
 
 namespace core {
 
-class CPU {
+class Processor {
 
 enum class SRFlag : uint8_t {
-    N = 1 << 7,     // Negative
-    V = 1 << 6,     // Overflow
-    _ = 1 << 5,     // ignored
-    B = 1 << 4,     // Break
-    D = 1 << 3,     // Decimal (use BCD for arithmetics)
-    I = 1 << 2,     // Interrupt (IRQ disable)
-    Z = 1 << 1,     // Zero
-    C = 1 << 0      // Carry
+    N = (1 << 7),     // Negative
+    V = (1 << 6),     // Overflow
+    _ = (1 << 5),     // ignored
+    B = (1 << 4),     // Break
+    D = (1 << 3),     // Decimal (use BCD for arithmetics)
+    I = (1 << 2),     // Interrupt (IRQ disable)
+    Z = (1 << 1),     // Zero
+    C = (1 << 0)      // Carry
+};
+
+struct INSTRUCTION {
+    uint8_t     (Processor::*fn_operate)(void) = nullptr;
+    uint8_t     (Processor::*fn_addrmode)(void) = nullptr;
+    uint8_t     cycles = 0;
 };
 
 
 public:
-    CPU();
-    ~CPU();
-    clock();
+    Processor();
+    ~Processor();
 
 public: //Interrupts
+    void    clock();
     void    reset();
     void    irq();
     void    nmi();
@@ -38,6 +45,25 @@ private: //Registers
     uint8_t     r_Y;
     uint8_t     r_SR;
     uint8_t     r_SP;
+
+private:
+    uint8_t     setFlag(SRFlag flag, uint8_t val);
+    uint8_t     getFlag(SRFlag flag);
+    uint8_t     fetch();
+
+    uint8_t     mFetched    = 0;
+    uint16_t    mAddrAbs    = 0;
+    uint16_t    mAddrRel    = 0;
+    uint8_t     mOPCode     = 0;
+    uint8_t     mCycles     = 0;
+    uint32_t    mClockCount = 0;
+
+
+private: //Instructions
+    std::array<INSTRUCTION, 256> mInstSet;
+
+    void        initInstSet();
+
 
 private: // Addressing Modes 
     uint8_t     ACC();  // Accumulator 
