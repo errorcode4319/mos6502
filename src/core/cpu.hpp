@@ -65,20 +65,20 @@ private: //Instructions
     void        initInstSet();
 
 
-private: // Addressing Modes 
-    uint8_t     ACC();  // Accumulator 
-    uint8_t     ABS();  // Absolute
-    uint8_t     ABX();  // Absolute, X-indexed
-    uint8_t     ABY();  // Absolute, Y-indexed 
-    uint8_t     IMM();  // Immediate
-    uint8_t     IMP();  // Implied
-    uint8_t     IND();  // Indirect     
-    uint8_t     INX();  // X-indexed, indirect
-    uint8_t     INY();  // indirect, Y-indexed 
-    uint8_t     REL();  // relative 
-    uint8_t     ZPG();  // Zeropage
-    uint8_t     ZPX();  // Zeropage, X-indexed 
-    uint8_t     ZPY();  // Zeropage, Y-indexed
+private: // Addressing Modes
+    uint8_t     am_ACC();  // Accumulator 
+    uint8_t     am_ABS();  // Absolute
+    uint8_t     am_ABX();  // Absolute, X-indexed
+    uint8_t     am_ABY();  // Absolute, Y-indexed 
+    uint8_t     am_IMM();  // Immediate
+    uint8_t     am_IMP();  // Implied
+    uint8_t     am_IND();  // Indirect     
+    uint8_t     am_INX();  // X-indexed, indirect
+    uint8_t     am_INY();  // indirect, Y-indexed 
+    uint8_t     am_REL();  // relative 
+    uint8_t     am_ZPG();  // Zeropage
+    uint8_t     am_ZPX();  // Zeropage, X-indexed 
+    uint8_t     am_ZPY();  // Zeropage, Y-indexed
 
 private: // Instruction OPCode
     // A__

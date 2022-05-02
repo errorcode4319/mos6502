@@ -5,5 +5,5 @@
 int main() {
     std::cout << "MOS 6502 Emulator" << std::endl;
 
-    core::CPU processor;
+    core::Processor proc;
 }
