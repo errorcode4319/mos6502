@@ -66,20 +66,21 @@ private: //Instructions
 
 
 private: // Addressing Modes
+    // Reference: https://www.masswerk.at/6502/6502_instruction_set.html
 
-    uint8_t     AM_ACC();  // Accumulator 
-    uint8_t     AM_ABS();  // Absolute
-    uint8_t     AM_ABX();  // Absolute, X-indexed
-    uint8_t     AM_ABY();  // Absolute, Y-indexed 
-    uint8_t     AM_IMM();  // Immediate
-    uint8_t     AM_IMP();  // Implied
-    uint8_t     AM_IND();  // Indirect     
-    uint8_t     AM_INX();  // X-indexed, indirect
-    uint8_t     AM_INY();  // indirect, Y-indexed 
-    uint8_t     AM_REL();  // relative 
-    uint8_t     AM_ZPG();  // Zeropage
-    uint8_t     AM_ZPX();  // Zeropage, X-indexed 
-    uint8_t     AM_ZPY();  // Zeropage, Y-indexed
+    uint8_t     AM_A();     // Accumulator 
+    uint8_t     AM_abs();   // Absolute
+    uint8_t     AM_absX();  // Absolute, X-indexed
+    uint8_t     AM_absY();  // Absolute, Y-indexed 
+    uint8_t     AM_IMM();   // Immediate
+    uint8_t     AM_impl();  // Implied
+    uint8_t     AM_ind();   // Indirect     
+    uint8_t     AM_Xind();  // X-indexed, indirect
+    uint8_t     AM_indY();  // indirect, Y-indexed 
+    uint8_t     AM_rel();   // relative 
+    uint8_t     AM_zpg();   // Zeropage
+    uint8_t     AM_zpgX();  // Zeropage, X-indexed 
+    uint8_t     AM_zpgY();  // Zeropage, Y-indexed
 
 
 private: // Instruction OPCode
