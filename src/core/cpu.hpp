@@ -22,10 +22,12 @@ enum class SRFlag : uint8_t {
 };
 
 struct INSTRUCTION {
-    uint8_t     (Processor::*fn_operate)(void) = nullptr;
-    uint8_t     (Processor::*fn_addrmode)(void) = nullptr;
-    uint8_t     cycles = 0;
+    // Default -> OP ZZZ (Illegal)
+    uint8_t     (Processor::*fn_operate)(void) = &Processor::OP_ZZZ;
+    uint8_t     (Processor::*fn_addrmode)(void) = &Processor::AM_IMM;
+    uint8_t     cycles = 2;
 };
+
 
 
 public:
