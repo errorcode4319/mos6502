@@ -2,67 +2,67 @@
 
 namespace core {
 
-uint8_t Processor::am_ACC() { // Accumulator
+uint8_t Processor::AM_ACC() { // Accumulator
 
 
     return 0;
 } 
-uint8_t Processor::am_ABS() { // Absolute
+uint8_t Processor::AM_ABS() { // Absolute
 
 
     return 0;
 }
-uint8_t Processor::am_ABX() { // Absolute, X-indexed
+uint8_t Processor::AM_ABX() { // Absolute, X-indexed
 
 
     return 0;
 }
-uint8_t Processor::am_ABY() { // Absolute, Y-indexed
+uint8_t Processor::AM_ABY() { // Absolute, Y-indexed
 
 
     return 0;
 }
-uint8_t Processor::am_IMM() { // Immediate
+uint8_t Processor::AM_IMM() { // Immediate
 
 
     return 0;
 }
-uint8_t Processor::am_IMP() { // Implied
+uint8_t Processor::AM_IMP() { // Implied
 
 
     return 0;
 }
-uint8_t Processor::am_IND() { // Indirect
+uint8_t Processor::AM_IND() { // Indirect
 
 
     return 0;
 }
-uint8_t Processor::am_INX() { // X-indexed, indirect
+uint8_t Processor::AM_INX() { // X-indexed, indirect
 
 
     return 0;
 }
-uint8_t Processor::am_INY() { // indirect, Y-indexed 
+uint8_t Processor::AM_INY() { // indirect, Y-indexed 
 
 
     return 0;
 }
-uint8_t Processor::am_REL() { // relative 
+uint8_t Processor::AM_REL() { // relative 
 
 
     return 0;
 }
-uint8_t Processor::am_ZPG() { // Zeropage
+uint8_t Processor::AM_ZPG() { // Zeropage
 
 
     return 0;
 }
-uint8_t Processor::am_ZPX() { // Zeropage, X-indexed 
+uint8_t Processor::AM_ZPX() { // Zeropage, X-indexed 
 
 
     return 0;
 }
-uint8_t Processor::am_ZPY() { // Zeropage, Y-indexed
+uint8_t Processor::AM_ZPY() { // Zeropage, Y-indexed
 
 
     return 0;

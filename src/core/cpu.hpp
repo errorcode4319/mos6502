@@ -66,93 +66,95 @@ private: //Instructions
 
 
 private: // Addressing Modes
-    uint8_t     am_ACC();  // Accumulator 
-    uint8_t     am_ABS();  // Absolute
-    uint8_t     am_ABX();  // Absolute, X-indexed
-    uint8_t     am_ABY();  // Absolute, Y-indexed 
-    uint8_t     am_IMM();  // Immediate
-    uint8_t     am_IMP();  // Implied
-    uint8_t     am_IND();  // Indirect     
-    uint8_t     am_INX();  // X-indexed, indirect
-    uint8_t     am_INY();  // indirect, Y-indexed 
-    uint8_t     am_REL();  // relative 
-    uint8_t     am_ZPG();  // Zeropage
-    uint8_t     am_ZPX();  // Zeropage, X-indexed 
-    uint8_t     am_ZPY();  // Zeropage, Y-indexed
+
+    uint8_t     AM_ACC();  // Accumulator 
+    uint8_t     AM_ABS();  // Absolute
+    uint8_t     AM_ABX();  // Absolute, X-indexed
+    uint8_t     AM_ABY();  // Absolute, Y-indexed 
+    uint8_t     AM_IMM();  // Immediate
+    uint8_t     AM_IMP();  // Implied
+    uint8_t     AM_IND();  // Indirect     
+    uint8_t     AM_INX();  // X-indexed, indirect
+    uint8_t     AM_INY();  // indirect, Y-indexed 
+    uint8_t     AM_REL();  // relative 
+    uint8_t     AM_ZPG();  // Zeropage
+    uint8_t     AM_ZPX();  // Zeropage, X-indexed 
+    uint8_t     AM_ZPY();  // Zeropage, Y-indexed
+
 
 private: // Instruction OPCode
     // A__
-    uint8_t     ADC();  // Add with Carry 
-    uint8_t     AND();  // And (with accumulator)
-    uint8_t     ASL();  // Arithmetic Shift left 
+    uint8_t     OP_ADC();  // Add with Carry 
+    uint8_t     OP_AND();  // And (with accumulator)
+    uint8_t     OP_ASL();  // Arithmetic Shift left 
     // B__
-    uint8_t     BCC();  // Branch on Carry Clear 
-    uint8_t     BCS();  // Branch on Carry Set 
-    uint8_t     BEQ();  // Branch on Equal (zero set)
-    uint8_t     BIT();  // Bit Test 
-    uint8_t     BMI();  // Branch on Minus (negative set)
-    uint8_t     BNE();  // Branch on Not Equal (zero clear)
-    uint8_t     BPL();  // Branch on plus (negative clear)
-    uint8_t     BRK();  // Break / Interrupt 
-    uint8_t     BVC();  // Branch on Overflow Clear 
-    uint8_t     BVS();  // Branch on Overflow Set 
+    uint8_t     OP_BCC();  // Branch on Carry Clear 
+    uint8_t     OP_BCS();  // Branch on Carry Set 
+    uint8_t     OP_BEQ();  // Branch on Equal (zero set)
+    uint8_t     OP_BIT();  // Bit Test 
+    uint8_t     OP_BMI();  // Branch on Minus (negative set)
+    uint8_t     OP_BNE();  // Branch on Not Equal (zero clear)
+    uint8_t     OP_BPL();  // Branch on plus (negative clear)
+    uint8_t     OP_BRK();  // Break / Interrupt 
+    uint8_t     OP_BVC();  // Branch on Overflow Clear 
+    uint8_t     OP_BVS();  // Branch on Overflow Set 
     // C__ 
-    uint8_t     CLC();  // Clear Carry 
-    uint8_t     CLD();  // Clear Decimal 
-    uint8_t     CLI();  // Clear Interrupt Disable 
-    uint8_t     CLV();  // Clear Overflow 
-    uint8_t     CMP();  // Compare (with accumulator)
-    uint8_t     CPX();  // Compare with X 
-    uint8_t     CPY();  // Compare with Y 
+    uint8_t     OP_CLC();  // Clear Carry 
+    uint8_t     OP_CLD();  // Clear Decimal 
+    uint8_t     OP_CLI();  // Clear Interrupt Disable 
+    uint8_t     OP_CLV();  // Clear Overflow 
+    uint8_t     OP_CMP();  // Compare (with accumulator)
+    uint8_t     OP_CPX();  // Compare with X 
+    uint8_t     OP_CPY();  // Compare with Y 
     // D__ 
-    uint8_t     DEC();  // Decrement 
-    uint8_t     DEX();  // Decrement X 
-    uint8_t     DEY();  // Decrement Y 
+    uint8_t     OP_DEC();  // Decrement 
+    uint8_t     OP_DEX();  // Decrement X 
+    uint8_t     OP_DEY();  // Decrement Y 
     // E__ 
-    uint8_t     EOR();  // Exclusiv or (with accumulator)
+    uint8_t     OP_EOR();  // Exclusiv or (with accumulator)
     // I__ 
-    uint8_t     INC();  // Increment 
-    uint8_t     INX();  // Increment X 
-    uint8_t     INY();  // Increment Y 
+    uint8_t     OP_INC();  // Increment 
+    uint8_t     OP_INX();  // Increment X 
+    uint8_t     OP_INY();  // Increment Y 
     // J__ 
-    uint8_t     JMP();  // Jump 
-    uint8_t     JSR();  // Jump Subroutine 
+    uint8_t     OP_JMP();  // Jump 
+    uint8_t     OP_JSR();  // Jump Subroutine 
     // L__
-    uint8_t     LDA();  // Load Accumulator
-    uint8_t     LDX();  // Load X 
-    uint8_t     LDY();  // Load Y 
-    uint8_t     LSR();  // Logical Shift right 
+    uint8_t     OP_LDA();  // Load Accumulator
+    uint8_t     OP_LDX();  // Load X 
+    uint8_t     OP_LDY();  // Load Y 
+    uint8_t     OP_LSR();  // Logical Shift right 
     // N__ 
-    uint8_t     NOP();  // No Operation 
+    uint8_t     OP_NOP();  // No Operation 
     // O__ 
-    uint8_t     ORA();  // Or with Accumulator 
+    uint8_t     OP_ORA();  // Or with Accumulator 
     // P__ 
-    uint8_t     PHA();  // Push Accumulator 
-    uint8_t     PHP();  // Push Processor Status (SR)
-    uint8_t     PLA();  // Pull Accumulator 
-    uint8_t     PLP();  // Pull Processor Statis (SR)
+    uint8_t     OP_PHA();  // Push Accumulator 
+    uint8_t     OP_PHP();  // Push Processor Status (SR)
+    uint8_t     OP_PLA();  // Pull Accumulator 
+    uint8_t     OP_PLP();  // Pull Processor Statis (SR)
     // R__ 
-    uint8_t     ROL();  // Rotate Left 
-    uint8_t     ROR();  // Rotate Right 
-    uint8_t     RTI();  // Return from Interrupt 
-    uint8_t     RTS();  // Return from Subroutine 
+    uint8_t     OP_ROL();  // Rotate Left 
+    uint8_t     OP_ROR();  // Rotate Right 
+    uint8_t     OP_RTI();  // Return from Interrupt 
+    uint8_t     OP_RTS();  // Return from Subroutine 
     // S__ 
-    uint8_t     SBC();  // Subtract with carry 
-    uint8_t     SEC();  // Set Carry 
-    uint8_t     SED();  // Set Decimal 
-    uint8_t     SEI();  // Set Interrupt Disable 
-    uint8_t     STA();  // Store Accumulator 
-    uint8_t     STX();  // Store X 
-    uint8_t     STY();  // Store Y
+    uint8_t     OP_SBC();  // Subtract with carry 
+    uint8_t     OP_SEC();  // Set Carry 
+    uint8_t     OP_SED();  // Set Decimal 
+    uint8_t     OP_SEI();  // Set Interrupt Disable 
+    uint8_t     OP_STA();  // Store Accumulator 
+    uint8_t     OP_STX();  // Store X 
+    uint8_t     OP_STY();  // Store Y
     // T__ 
-    uint8_t     TAX();  // Transfer Accumulator to X 
-    uint8_t     TAY();  // Transfer Accumulator to Y 
-    uint8_t     TSX();  // Transfer Stark Pointer to X 
-    uint8_t     TXA();  // Transfer X to Accumulator 
-    uint8_t     TXS();  // Transfer X to Stark Pointer 
-    uint8_t     TYA();  // Transfer Y to Accumulator 
+    uint8_t     OP_TAX();  // Transfer Accumulator to X 
+    uint8_t     OP_TAY();  // Transfer Accumulator to Y 
+    uint8_t     OP_TSX();  // Transfer Stark Pointer to X 
+    uint8_t     OP_TXA();  // Transfer X to Accumulator 
+    uint8_t     OP_TXS();  // Transfer X to Stark Pointer 
+    uint8_t     OP_TYA();  // Transfer Y to Accumulator 
     // Invalid OPCODE
-    uint8_t     ZZZ();  // Unknown, Runtimer Error 
+    uint8_t     OP_ZZZ();  // Unknown, Runtimer Error 
 
 
 
