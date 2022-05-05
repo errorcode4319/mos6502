@@ -1,5 +1,5 @@
-#ifndef __CPU_HPP
-#define __CPU_HPP 
+#ifndef __CPU_HPP__
+#define __CPU_HPP __
 
 #include <iostream>
 #include <array> 
@@ -165,4 +165,4 @@ private: // Instruction OPCode
 
 }
 
-#endif // __CPU_HPP
+#endif // __CPU_HPP__

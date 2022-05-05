@@ -3,7 +3,7 @@
 namespace core {
 
 Processor::Processor() {
-
+    initInstSet(); 
 }
 
 Processor::~Processor() {
