@@ -1,6 +1,6 @@
-#include "cpu.hpp"
+#include "processor.hpp"
 
-namespace core {
+namespace mos6502::core {
 
 uint8_t Processor::AM_A() { // Accumulator
 

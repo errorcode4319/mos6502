@@ -1,12 +1,12 @@
-#ifndef __CPU_HPP__
-#define __CPU_HPP __
+#pragma once 
 
 #include <iostream>
 #include <array> 
 #include <vector>
 #include <cstdint>
+#include <functional>
 
-namespace core {
+namespace mos6502::core {
 
 class Processor {
 
@@ -21,14 +21,12 @@ enum class SRFlag : uint8_t {
     C = (1 << 0)      // Carry
 };
 
-struct INSTRUCTION {
+struct Instruction {
     // Default -> OP ZZZ (Illegal)
-    uint8_t     (Processor::*fn_operate)(void) = &Processor::OP_ZZZ;
-    uint8_t     (Processor::*fn_addrmode)(void) = &Processor::AM_IMM;
+    std::function<uint8_t(void)> operate;
+    std::function<uint8_t(void)> addrmode;
     uint8_t     cycles = 2;
 };
-
-
 
 public:
     Processor();
@@ -62,7 +60,7 @@ private:
 
 
 private: //Instructions
-    std::array<INSTRUCTION, 256> mInstSet;
+    std::array<Instruction, 256> mInstSet;
 
     void        initInstSet();
 
@@ -159,10 +157,6 @@ private: // Instruction OPCode
     // Invalid OPCODE
     uint8_t     OP_ZZZ();  // Unknown, Runtimer Error 
 
-
-
 };
 
 }
-
-#endif // __CPU_HPP__

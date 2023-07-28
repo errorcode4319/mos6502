@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.22 FATAL_ERROR)
 
-set(CMAKE_CXX_FLAGS "-std=c++17 -stdlib=libc++")
-
-project(mos6502)
-
-file(GLOB_RECURSE SRC 
-    "./src/**.cpp" 
-    "./src/**.hpp"
+project(
+    mos6502 
+    VERSION 0.1
+    LANGUAGES CXX
 )
 
-add_executable(mos6502 ${SRC})
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_subdirectory(libmos6502)

@@ -1,6 +1,6 @@
-#include "cpu.hpp"
+#include "processor.hpp"
 
-namespace core {
+namespace mos6502::core {
 
 // A__
 uint8_t Processor::OP_ADC() { // Add with Carry
